@@ -14,7 +14,8 @@
     
 }
 
-@property (nonatomic, strong) IBOutlet RPFloatingPlaceholderTextField *textField;
+@property (nonatomic, strong) IBOutlet RPFloatingPlaceholderTextField *textFieldOne;
+@property (nonatomic, strong) IBOutlet RPFloatingPlaceholderTextField *textFieldTwo;
 
 @end
 
@@ -48,9 +49,13 @@
     //flTextView.text = @"I love lamp.  This is pre-existing text."; // You can set text after it's been initialized
     [self.view addSubview:flTextView];
      */
-    self.textField.regexpPattern = @"[a-zA-Z]{2,}+(\\s{1}[a-zA-Z]{2,}+)+"; /// e.g. Tomasz Szulc or Cing Yo Ciong
-    self.textField.regexpValidColor = [UIColor greenColor];
-    self.textField.regexpInvalidColor = [UIColor redColor];
+    self.textFieldOne.regexpPattern = @"[a-zA-Z]{2,}+(\\s{1}[a-zA-Z]{2,}+)+"; /// e.g. Tomasz Szulc or Cing Yo Ciong
+    self.textFieldOne.regexpValidColor = [UIColor greenColor];
+    self.textFieldOne.regexpInvalidColor = [UIColor redColor];
+    
+    self.textFieldTwo.regexpPattern = @"[a-zA-Z]{2,}+(\\s{1}[a-zA-Z]{2,}+)+"; /// e.g. Tomasz Szulc or Cing Yo Ciong
+    self.textFieldTwo.regexpValidColor = [UIColor greenColor];
+    self.textFieldTwo.regexpInvalidColor = [UIColor redColor];
 }
 
 - (IBAction)dismissKeyboard:(id)sender
