@@ -492,12 +492,12 @@
     if (canShow)
     {
         UIColor *color = self.textColor;
-        if (result == ValidationPassed && _regexpValidColor)
+        if (result == ValidationPassed && _regexpValidColor) {
             color = _regexpValidColor;
-        else if (result == ValidationFailed && _regexpInvalidColor)
+        } else if (result == ValidationFailed && _regexpInvalidColor) {
             color = _regexpInvalidColor;
-        
-        self.textColor = color;
+        }
+        self.floatingLabel.textColor = color;
     }
 }
 
