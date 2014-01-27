@@ -10,6 +10,14 @@
 #import "RPFloatingPlaceholderTextField.h"
 #import "RPFloatingPlaceholderTextView.h"
 
+@interface ViewController () {
+    
+}
+
+@property (nonatomic, strong) IBOutlet RPFloatingPlaceholderTextField *textField;
+
+@end
+
 @implementation ViewController
 
 - (void)viewDidLoad
@@ -40,6 +48,9 @@
     //flTextView.text = @"I love lamp.  This is pre-existing text."; // You can set text after it's been initialized
     [self.view addSubview:flTextView];
      */
+    self.textField.regexpPattern = @"[a-zA-Z]{2,}+(\\s{1}[a-zA-Z]{2,}+)+"; /// e.g. Tomasz Szulc or Cing Yo Ciong
+    self.textField.regexpValidColor = [UIColor greenColor];
+    self.textField.regexpInvalidColor = [UIColor redColor];
 }
 
 - (IBAction)dismissKeyboard:(id)sender
