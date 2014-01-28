@@ -268,7 +268,8 @@
     // Check if we need to redraw for pre-existing text
     _shouldDrawPlaceholder = !self.hasText;
     if (self.hasText) {
-        _floatingLabel.textColor = self.floatingLabelInactiveTextColor;
+        [self updateViewForState:_validationResult];
+//        _floatingLabel.textColor = self.floatingLabelInactiveTextColor;
         [self showFloatingLabelWithAnimation:NO];
     }
 }
@@ -314,18 +315,18 @@
 
 - (void)textFieldDidBeginEditing:(NSNotification *)notification
 {
-    __weak typeof(self) weakSelf = self;
-    [self animateFloatingLabelColorChangeWithAnimationBlock:^{
-        _floatingLabel.textColor = weakSelf.floatingLabelActiveTextColor;
-    }];
+//    __weak typeof(self) weakSelf = self;
+//    [self animateFloatingLabelColorChangeWithAnimationBlock:^{
+//        _floatingLabel.textColor = weakSelf.floatingLabelActiveTextColor;
+//    }];
 }
 
 - (void)textFieldDidEndEditing:(NSNotification *)notification
 {
-    __weak typeof(self) weakSelf = self;
-    [self animateFloatingLabelColorChangeWithAnimationBlock:^{
-        _floatingLabel.textColor = weakSelf.floatingLabelInactiveTextColor;
-    }];
+//    __weak typeof(self) weakSelf = self;
+//    [self animateFloatingLabelColorChangeWithAnimationBlock:^{
+//        _floatingLabel.textColor = weakSelf.floatingLabelInactiveTextColor;
+//    }];
 }
 
 - (void)textFieldTextDidChange:(NSNotification *)notification
